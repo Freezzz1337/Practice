@@ -1,0 +1,25 @@
+.pictureSize {
+    height: 465px;
+    width: 620px;
+}
+
+@media screen and (max-width: 1399px) {
+    .pictureSize {
+        height: 385px;
+        width: 540px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .pictureSize {
+        height: 355px;
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .pictureSize {
+        height: 328px;
+        width: 410px;
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>Редагування</title>
+</head>
+<body>
+<header th:insert="commonBlocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <div th:each="element : ${carModels}">
+        <form method="post" enctype="multipart/form-data">
+            <input type="text" th:value="${element.name}" name="name" placeholder="Назва" class="form-control"><br>
+            <input type="text" th:value="${element.color}" name="color" placeholder="Колір машини" class="form-control"><br>
+            <input type="text" th:value="${element.mileage}" name="mileage" placeholder="Пробіг" class="form-control"><br>
+            <input type="text" th:value="${element.fuel}" name="fuel" placeholder="Паливо" class="form-control"><br>
+            <input type="text" th:value="${element.engine}" name="engine" placeholder="Об'єм двигуна" class="form-control"><br>
+            <input type="text" th:value="${element.price}" name="price" placeholder="Ціна" class="form-control"><br>
+            <input type="file" th:value="${element.picture}" name="picture" placeholder="Фото" class="form-control"><br>
+            <textarea type="text" th:text="${element.description}" name="description" placeholder="Опис" class="form-control" /><br>
+            <button type="submit" class="btn btn-success">Додати в базу</button>
+        </form>
+    </div>
+</div>
+
+<footer th:insert="commonBlocks/footer :: footer"></footer>
+
+</body>
+</html>

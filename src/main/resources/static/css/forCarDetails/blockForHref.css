@@ -1,0 +1,10 @@
+.forHref {
+    color: black;
+    text-decoration: none;
+}
+
+.forHref:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

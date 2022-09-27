@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="/css/forCarDetails/blockPicture.css" rel="stylesheet" text="text/css">
+    <link href="/css/forCarDetails/blockFont.css" rel="stylesheet" text="text/css">
+    <link href="/css/forCarDetails/blockLine.css" rel="stylesheet" text="text/css">
+    <link href="/css/forCarDetails/blockForIconSize.css" rel="stylesheet" text="text/css">
+    <link href="/css/fontForHeader.css" rel="stylesheet" text="text/css">
+
+    <title>Детальний опис авто</title>
+</head>
+<body>
+<header th:insert="commonBlocks/header :: header"></header>
+
+<div class="container">
+    <div class="row" th:each="element : ${carModels}">
+
+
+        <div class="col-sm">
+            <img class="pictureSize"
+                 th:src="${'data:image/png;base64,' + @base64Encoder.encodeToString(element.picture)}">
+        </div>
+
+        <div class="col">
+            <div class="fontForHeader blockFontForName">
+                <p th:text="${element.name}"></p>
+                <hr class="blockLineForHead featurette-divider">
+            </div>
+
+            <div class="row">
+                <div class="col btn-group">
+                    <div>
+                        <img class="blockForIconSizeSpeedometer" src="/icon/speedometer.png">
+                    </div>
+                    &nbsp;
+                    <div class="blockFont">
+                        Пробіг(тис.км):
+                    </div>
+                </div>
+                <div class="col blockFont">
+                    <p th:text="${element.mileage}"></p>
+                </div>
+                <hr class="blockLineForHead featurette-divider">
+            </div>
+
+
+            <div class="row">
+                <div class="col btn-group">
+                    <div>
+                        <img class="blockForIconSizeEngine" src="/icon/engine.png">
+                    </div>
+                    &nbsp;
+                    <div class="blockFont">
+                        Двигун:
+                    </div>
+                </div>
+                <div class="col blockFont">
+                    <p th:text="${element.engine}"></p>
+                </div>
+                <hr class="blockLineForHead featurette-divider">
+            </div>
+
+
+            <div class="row">
+                <div class="col btn-group">
+                    <div>
+                        <img class="blockForIconSizeDollar" src="/icon/dollar.png">
+                    </div>
+
+                    <div class="blockFont">
+                        Ціна:
+                    </div>
+                </div>
+
+                <div class="col blockFont">
+                    <p th:text="${element.price}"></p>
+                </div>
+                <hr class="blockLineForHead featurette-divider">
+            </div>
+
+
+            <div class="row">
+                <div class="col btn-group">
+                    <div>
+                        <img class="blockForIconSizeColor" src="/icon/color.png">
+                    </div>
+                    <div class="col blockFont">
+                        Колір:
+                    </div>
+                </div>
+                <div class="col blockFont">
+                    <p th:text="${element.color}"></p>
+                </div>
+                <hr class="blockLineForHead featurette-divider">
+            </div>
+
+            <div class="row">
+                <div class="col btn-group">
+                    <div>
+                        <img class="blockForIconSizeFuel" src="/icon/fuel.png">
+                    </div>
+                    <div class="blockFont">
+                        Паливо:
+                    </div>
+                </div>
+                <div class="col blockFont">
+                    <p th:text="${element.fuel}"></p>
+                </div>
+                <hr class="blockLineForHead featurette-divider">
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-primary" th:href="'/carDetails/' + ${element.id} + '/edit'">Редагувати</a>
+
+                </div>
+                <div class="col">
+                    <form th:action="'/carDetails/' + ${element.id} + '/remove'" method="post">
+                        <button class="btn btn-primary" type="submit">Видалити</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div>
+            <div class="col">
+                <br>
+                Опис:
+            </div>
+            <div class="col">
+                <p th:text="${element.description}"></p>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+    </div>
+
+</div>
+
+<footer th:insert="commonBlocks/footer :: footer"></footer>
+</body>
+</html>

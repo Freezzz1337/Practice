@@ -1,0 +1,11 @@
+@media screen and (max-width: 1399px) {
+    .blockLineForHead {
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .blockLineForHead {
+        margin-bottom: 10px;
+    }
+}

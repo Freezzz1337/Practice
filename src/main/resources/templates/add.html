@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>Додавання в базу даних</title>
+</head>
+<body>
+<header th:insert="commonBlocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Назва" class="form-control"><br>
+        <input type="text" name="color" placeholder="Колір машини" class="form-control"><br>
+        <input type="text" name="mileage" placeholder="Пробіг" class="form-control"><br>
+        <input type="text" name="fuel" placeholder="Паливо" class="form-control"><br>
+        <input type="text" name="engine" placeholder="Об'єм двигуна" class="form-control"><br>
+        <input type="text" name="price" placeholder="Ціна" class="form-control"><br>
+        <input type="file" name="picture" placeholder="Фото" class="form-control"><br>
+        <textarea type="text" name="description" placeholder="Опис" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Додати в базу</button>
+    </form>
+</div>
+
+<footer th:insert="commonBlocks/footer :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+.blockFont{
+    font-size: 21px;
+}
+.blockFontForName{
+    font-size: 45px;
+}
+
+
+@media screen and (max-width: 1399px) {
+    .blockFont{
+        font-size: 18px;
+    }
+    .blockFontForName{
+        font-size: 38px;
+    }
+
+}
+
+@media screen and (max-width: 1199px) {
+    .blockFont{
+        font-size: 16px;
+    }
+    .blockFontForName{
+        font-size: 30px;
+    }
+
+}
+@media screen and (max-width: 991px) {
+    .blockFont{
+        font-size: 13px;
+    }
+    .blockFontForName{
+        font-size: 20px;
+    }
+
+}
