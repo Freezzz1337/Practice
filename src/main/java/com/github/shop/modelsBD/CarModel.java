@@ -16,7 +16,6 @@ public class CarModel {
     @Column(length = 1000)
     private String description;
     private String name, color, fuel;
-    //private int year; -> добавить год випуска
     private double mileage, engine, price;
 
     @Lob
